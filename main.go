@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/Arismonx/MiniShop/config"
+	"github.com/Arismonx/MiniShop/pkg/database"
 )
 
 func main() {
@@ -13,7 +14,6 @@ func main() {
 	_ = ctx
 
 	//initialize config
-
 	cfg := config.LoadConfig(func() string {
 		if len(os.Args) < 2 {
 			log.Fatal("Error: .env path is required")
@@ -22,5 +22,9 @@ func main() {
 		return os.Args[1]
 	}())
 
-	log.Println(cfg)
+	//database Connection
+	db := database.DBConnect(ctx, &cfg)
+	defer db.Disconnect(ctx)
+
+	log.Println(db)
 }
