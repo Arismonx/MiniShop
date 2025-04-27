@@ -1,19 +1,19 @@
 package playerHandler
 
-import _playerUsecase "github.com/Arismonx/MiniShop/modules/player/playerUsecase"
+import (
+	_playerUsecase "github.com/Arismonx/MiniShop/modules/player/playerUsecase"
+)
 
-//create interface and struct
+// create interface and struct
 type (
-	PlayerGrpcHandlerService interface{}
-
 	playerGrpcHandler struct {
 		playerUsecase _playerUsecase.PlayerUsecaseService
 	}
 )
 
-//create constructor
+// create constructor
 func NewPlayerGrpcHandler(
 	playerUsecase _playerUsecase.PlayerUsecaseService,
-) PlayerGrpcHandlerService {
+) *playerGrpcHandler {
 	return &playerGrpcHandler{playerUsecase}
 }

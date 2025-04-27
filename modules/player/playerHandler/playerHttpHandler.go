@@ -1,19 +1,24 @@
 package playerHandler
 
-import _playerUsecase "github.com/Arismonx/MiniShop/modules/player/playerUsecase"
+import (
+	"github.com/Arismonx/MiniShop/config"
+	_playerUsecase "github.com/Arismonx/MiniShop/modules/player/playerUsecase"
+)
 
-//create interface and struct
+// create interface and struct
 type (
 	PlayerHttpHandlerService interface{}
 
 	playerHttpHandler struct {
+		cfg           *config.Config
 		playerUsecase _playerUsecase.PlayerUsecaseService
 	}
 )
 
-//create constructor
+// create constructor
 func NewPlayerHttpHandler(
+	cfg *config.Config,
 	playerUsecase _playerUsecase.PlayerUsecaseService,
 ) PlayerHttpHandlerService {
-	return &playerHttpHandler{playerUsecase}
+	return &playerHttpHandler{cfg, playerUsecase}
 }
