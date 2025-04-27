@@ -7,18 +7,18 @@ import (
 
 // create interface and struct
 type (
-	PaymentHttpHandlerService interface{}
+	PaymentQueueHandlerService interface{}
 
-	paymentHttpHandler struct {
+	paymentQueueHandler struct {
 		cfg            *config.Config
 		paymentUsecase _paymentUsecase.PaymentUsecaseService
 	}
 )
 
 // create constructor
-func NewPaymentHttpHandler(
+func NewPaymentQueueHandler(
 	cfg *config.Config,
 	paymentUsecase _paymentUsecase.PaymentUsecaseService,
-) PaymentHttpHandlerService {
-	return &paymentHttpHandler{cfg, paymentUsecase}
+) PaymentQueueHandlerService {
+	return &paymentQueueHandler{cfg, paymentUsecase}
 }
