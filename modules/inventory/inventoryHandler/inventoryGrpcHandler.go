@@ -7,19 +7,15 @@ import (
 
 // *essentail* Create interface and struct
 type (
-	InventoryGrpcHandler interface{}
-
 	inventoryGrpcHandler struct {
-		cfg              *config.Config
 		inventoryUsecase _inventoryUsecase.InventoryUsecaseService
 	}
 )
 
-//*essntail* Create constructor of inventoryGrpcHandler
-
+// *essntail* Create constructor of inventoryGrpcHandler
 func NewInventoryGrpcHandler(
 	cfg *config.Config,
 	inventoryUsecase _inventoryUsecase.InventoryUsecaseService,
-) InventoryGrpcHandler {
-	return &inventoryGrpcHandler{cfg, inventoryUsecase}
+) *inventoryGrpcHandler {
+	return &inventoryGrpcHandler{inventoryUsecase}
 }
