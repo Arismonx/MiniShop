@@ -5,7 +5,6 @@ import (
 )
 
 // *essential* Create struct
-
 type (
 	authGrpcHandler struct {
 		authUsecase _authUsecase.AuthUsecaseService
@@ -13,9 +12,8 @@ type (
 )
 
 // *essential* Create constructor of struct authGrpcHandler
-
 func NewAuthGrpcHandler(
 	authUsecase _authUsecase.AuthUsecaseService,
-) _authUsecase.AuthUsecaseService {
+) *authGrpcHandler {
 	return &authGrpcHandler{authUsecase}
 }
