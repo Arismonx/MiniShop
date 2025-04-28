@@ -16,7 +16,7 @@ type (
 )
 
 // Create constructor
-func NewmiddlewareHandler(
+func NewMiddlewareHandler(
 	cfg *config.Config,
 	middlewareUsecase _middlewareUsecase.MiddlewareUsecaseService,
 ) MiddlewareHandlerService {
