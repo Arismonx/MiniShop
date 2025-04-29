@@ -90,10 +90,15 @@ func Start(pctx context.Context, cfg *config.Config, db *mongo.Client) {
 	//choose start service
 	switch s.cfg.App.Name {
 	case "auth":
+		s.authService()
 	case "item":
+		s.itemService()
 	case "player":
+		s.playerService()
 	case "inventory":
+		s.inventoryService()
 	case "payment":
+		s.paymentService()
 	}
 
 	//Graceful Shutdown

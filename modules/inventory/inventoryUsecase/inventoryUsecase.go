@@ -12,7 +12,7 @@ type (
 )
 
 // *essential* Create constructor of inventoryUsecase
-func NewInventoryRepository(
+func NewInventoryUsecase(
 	inventoryRepository _inventoryRepository.InventoryRepositoryService,
 ) InventoryUsecaseService {
 	return &inventoryUsecase{inventoryRepository}

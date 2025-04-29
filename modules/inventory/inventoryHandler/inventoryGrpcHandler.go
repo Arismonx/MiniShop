@@ -1,7 +1,6 @@
 package inventoryHandler
 
 import (
-	"github.com/Arismonx/MiniShop/config"
 	_inventoryUsecase "github.com/Arismonx/MiniShop/modules/inventory/inventoryUsecase"
 )
 
@@ -14,7 +13,6 @@ type (
 
 // *essntail* Create constructor of inventoryGrpcHandler
 func NewInventoryGrpcHandler(
-	cfg *config.Config,
 	inventoryUsecase _inventoryUsecase.InventoryUsecaseService,
 ) *inventoryGrpcHandler {
 	return &inventoryGrpcHandler{inventoryUsecase}
